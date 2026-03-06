@@ -1,0 +1,13 @@
+# Xcode build artifacts
+build/
+DerivedData/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/
+
+# macOS
+.DS_Store
+*.app
+
+# Debug logs
+screensnap-debug.log
