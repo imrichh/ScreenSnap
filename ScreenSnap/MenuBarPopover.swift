@@ -47,6 +47,10 @@ struct MenuBarPopover: View {
             }
             .buttonStyle(.bordered)
 
+            Text("⌥S to copy to clipboard")
+                .font(.caption2)
+                .foregroundColor(.secondary.opacity(0.6))
+
             Divider()
 
             HStack {

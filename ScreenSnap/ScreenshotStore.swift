@@ -48,29 +48,20 @@ final class ScreenshotStore: ObservableObject {
             return
         }
 
-        let exists = FileManager.default.fileExists(atPath: url.path)
-        log("file exists: \(exists)")
-
-        // Use osascript process — proven to work from terminal
-        let process = Process()
-        process.executableURL = URL(fileURLWithPath: "/usr/bin/osascript")
-        process.arguments = ["-e", "set the clipboard to POSIX file \"\(url.path)\""]
-
-        let pipe = Pipe()
-        process.standardError = pipe
-
-        do {
-            try process.run()
-            process.waitUntilExit()
-            let errData = pipe.fileHandleForReading.readDataToEndOfFile()
-            let errStr = String(data: errData, encoding: .utf8) ?? ""
-            log("osascript exit code: \(process.terminationStatus), stderr: \(errStr)")
-            if process.terminationStatus == 0 {
-                AudioServicesPlaySystemSound(1004)
-            }
-        } catch {
-            log("osascript FAILED: \(error)")
+        guard let data = try? Data(contentsOf: url) else {
+            log("BAIL: could not read file data")
+            return
         }
+
+        let pb = NSPasteboard.general
+        pb.clearContents()
+
+        // Write both image data and file URL so it works everywhere
+        pb.setData(data, forType: .png)
+        pb.writeObjects([url as NSURL])
+
+        log("clipboard set with PNG data + file URL")
+        AudioServicesPlaySystemSound(1004)
     }
 
     func openInFinder() {
