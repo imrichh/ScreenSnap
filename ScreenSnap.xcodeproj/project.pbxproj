@@ -13,6 +13,7 @@
 		AA000004 /* MenuBarPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100004; };
 		AA000005 /* GlobalHotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100005; };
 		AA000006 /* LaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA100006; };
+		AA000007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA100008; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		AA100005 /* GlobalHotKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHotKey.swift; sourceTree = "<group>"; };
 		AA100006 /* LaunchAtLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLogin.swift; sourceTree = "<group>"; };
 		AA100007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA100008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA200001 /* ScreenSnap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenSnap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -35,6 +37,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA300002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA000007 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXGroup section */
 		AA400001 = {
@@ -55,6 +68,7 @@
 				AA100005 /* GlobalHotKey.swift */,
 				AA100006 /* LaunchAtLogin.swift */,
 				AA100007 /* Info.plist */,
+				AA100008 /* Assets.xcassets */,
 			);
 			path = ScreenSnap;
 			sourceTree = "<group>";
@@ -76,6 +90,7 @@
 			buildPhases = (
 				AA600001 /* Sources */,
 				AA300001 /* Frameworks */,
+				AA300002 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -197,7 +212,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.screensnap.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -221,7 +236,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.screensnap.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
